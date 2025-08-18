@@ -1,5 +1,16 @@
-# Vue 3 + Vite
+# vue3-starter
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+> Vite + Vue 3 + ESLint + Prettier + Vitest + GitHub Actions  
+> 干净、类型安全、可一键克隆的脚手架模板。
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+![CI](https://github.com/<baibn>/vue3-starter/workflows/CI/badge.svg)
+![license](https://img.shields.io/github/license/<baibn>/vue3-starter)
+![release](https://img.shields.io/github/v/release/<baibn>/vue3-starter)
+
+## 一键使用
+
+```bash
+npx degit <用户名>/vue3-starter#main my-project
+cd my-project
+pnpm install           # 或 npm / yarn
+pnpm dev
