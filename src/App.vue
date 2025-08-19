@@ -1,15 +1,20 @@
 <script setup>
+import { ref } from 'vue'
 import CounterComponent from './components/CounterComponent.vue'
 import EnvTag from './components/EnvTag.vue'
+import LifeCycleDemo from './components/LifeCycleDemo.vue'
+import TodoList from './components/TodoList.vue'
 import UserCard from './components/UserCard.vue'
-import { capitalize, sum } from './utils/math'
-console.log('sum 1~5 =', sum(1, 2, 3, 4, 5))
-console.log('capitalize vue =', capitalize('vue'))
+const show = ref(true)
+const todos = ref(['vue', 'vite'])
 </script>
+
 <template>
   <EnvTag />
   <CounterComponent />
   <UserCard />
+  <LifeCycleDemo v-if="show" />
+  <TodoList v-model:iterms="todos" />
 </template>
 
 <style scoped></style>
