@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, isRef, ref, watchEffect } from 'vue'
 const count = ref(0)
 const double = computed(() => count.value * 2)
 
@@ -12,6 +12,8 @@ function dec() {
 function reset() {
   count.value = 0
 }
+console.log(isRef(count))
+watchEffect(() => console.log(count.value))
 </script>
 
 <template>
