@@ -12,6 +12,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "pinia": "^3.0.3",
     "vue": "^3.5.18"
   },
   "devDependencies": {
@@ -28,6 +29,7 @@
     "jsdom": "^26.1.0",
     "prettier": "^3.6.2",
     "vite": "^7.1.2",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "vue-eslint-parser": "^10.2.0"
   }
 }

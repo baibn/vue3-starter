@@ -1,27 +1,53 @@
 <script setup>
 import { ref } from 'vue'
-import CounterComponent from './components/CounterComponent.vue'
-import EnvTag from './components/EnvTag.vue'
-import LifeCycleDemo from './components/LifeCycleDemo.vue'
-import TodoList from './components/TodoList.vue'
-import UserCard from './components/UserCard.vue'
+// import TodoList from './components/TodoList.vue'
 
-import ThemeProvider from './components/ThemeProvider.vue'
-import DeepChild from './components/DeepChild.vue'
+import TodoFooter from '@/components/todo/TodoFooter.vue'
+import TodoHeader from '@/components/todo/TodoHeader.vue'
+import TodoList from '@/components/todo/TodoList.vue'
+import { useTodo } from '@/composables/useTodo'
+const todo = useTodo()
 
 const show = ref(true)
-const todos = ref(['vue', 'vite'])
+// const todos = ref(['vue', 'vite'])
 </script>
 
 <template>
-  <EnvTag />
+  <!-- <EnvTag />
   <CounterComponent />
   <UserCard />
-  <LifeCycleDemo v-if="show" />
-  <TodoList v-model:iterms="todos" />
-  <ThemeProvider>
+  <LifeCycleDemo v-if="show" /> -->
+  <!-- <TodoList v-model:iterms="todos" /> -->
+  <!-- <ThemeProvider>
     <DeepChild></DeepChild>
-  </ThemeProvider>
+  </ThemeProvider> -->
+  <section class="todoapp">
+    <TodoHeader @add="todo.add" />
+    <TodoList
+      :todos="todo.filteredTodos.value"
+      @toggle="todo.toggle"
+      @remove="todo.remove"
+    />
+    <TodoFooter
+      :left="todo.leftCount"
+      :filter="todo.filter"
+      @setFilter="(f) => (todo.filter = f)"
+      @clear="todo.clearCompleted"
+    />
+  </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 40px;
+}
+.todoapp {
+  background: #fff;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+</style>
