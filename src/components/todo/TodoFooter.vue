@@ -1,9 +1,10 @@
 <script setup lang="ts">
 type Filter = 'all' | 'active' | 'completed'
+
 interface Props {
   left: number
   completedCount: number
-  filter: 'all' | 'active' | 'completed'
+  filter: Filter
 }
 interface Emits {
   (e: 'setFilter', f: Filter): void
@@ -45,36 +46,3 @@ const filters: { label: string; value: Filter }[] = [
     </button>
   </footer>
 </template>
-
-<style scoped>
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 12px;
-  font-size: 14px;
-  color: #777;
-}
-.filters {
-  display: flex;
-  gap: 6px;
-}
-.filters a {
-  padding: 2px 6px;
-  border-radius: 3px;
-  text-decoration: none;
-  color: inherit;
-}
-.filters a.selected {
-  border: 1px solid #ce4646;
-}
-.clear-completed {
-  background: none;
-  border: none;
-  color: inherit;
-  cursor: pointer;
-}
-.clear-completed:hover {
-  text-decoration: underline;
-}
-</style>

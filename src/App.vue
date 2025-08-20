@@ -30,8 +30,9 @@ const show = ref(true)
     />
     <TodoFooter
       :left="todo.leftCount"
+      :completed-count="todo.completedCount"
       :filter="todo.filter"
-      @setFilter="(f) => (todo.filter = f)"
+      @set-filter="todo.filter = $event"
       @clear="todo.clearCompleted"
     />
   </section>
