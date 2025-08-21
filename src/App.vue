@@ -1,10 +1,7 @@
 <script setup>
 import { ref } from 'vue'
-// import TodoList from './components/TodoList.vue'
 
 import MiniTodo from './components/MiniTodo.vue'
-
-// const todos = ref(['vue', 'vite'])
 </script>
 
 <template>
