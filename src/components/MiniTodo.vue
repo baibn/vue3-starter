@@ -3,7 +3,15 @@ import { ref } from 'vue'
 import { useTodo } from '../composables/useTodo'
 
 // 按需解构
-const { filteredTodos, filter, filterOptions, add, remove, toggle } = useTodo()
+const {
+  filteredTodos,
+  filter,
+  filterOptions,
+  add,
+  remove,
+  toggle,
+  clearCompleted,
+} = useTodo()
 const input = ref('')
 
 function submit() {
@@ -35,4 +43,7 @@ function submit() {
       <button @click="remove(t.id)">×</button>
     </li>
   </ul>
+  <div>
+    <button @click="clearCompleted">Clear completed</button>
+  </div>
 </template>
