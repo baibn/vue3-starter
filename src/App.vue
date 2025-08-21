@@ -1,10 +1,9 @@
 <script setup>
 import { ref } from 'vue'
 // import TodoList from './components/TodoList.vue'
-import { useTodo } from '@/composables/useTodo'
-const todo = useTodo()
 
-const show = ref(true)
+import MiniTodo from './components/MiniTodo.vue'
+
 // const todos = ref(['vue', 'vite'])
 </script>
 
@@ -17,6 +16,7 @@ const show = ref(true)
   <!-- <ThemeProvider>
     <DeepChild></DeepChild>
   </ThemeProvider> -->
+  <MiniTodo />
 </template>
 
 <style scoped>
